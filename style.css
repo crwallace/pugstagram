@@ -1,0 +1,35 @@
+body {
+  background-image: url(img/paw-bg.gif);
+  background-repeat: repeat;
+}        
+
+#target{
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.photo{
+	border: 2px solid #ccc;
+	display: inline;
+	margin-top: 12px;
+	width: 75%;
+}
+
+.highlight{
+	background: yellow;
+	border: 3px solid green;
+}
+
+.select{
+	background: #E6E6E6;
+	border: 1px solid #ccc;
+	display: inline-block;
+	height: 220px;
+	width: 230px;
+	text-align: center;
+	vertical-align: center;
+	border-radius: 10px;
+	margin-right: 22px;
+	margin-top: 20px;
+}
