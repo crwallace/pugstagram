@@ -9,7 +9,7 @@
 		<script type="text/javascript">
 			$(document).ready(function(){
 				var tag = "pug";
-				var count = 20;
+				var count = 8;
 				var access_token = '22033045.ea9028a.eec94286a2e049429fe51c3fbc95db20';
 				var access_parameters = {access_token:access_token};
 
@@ -42,7 +42,8 @@
 					    	//this find the url source of the img next to the button that was clicked
 					    	$('button').click(function(){
 								var thisOne = $(this).siblings('img').attr('src');
-								console.log(thisOne);
+								$('#largePic').html('<img src="' + thisOne + '">');
+								$('#photoPreview').html('<img id="finalPic" src="' + thisOne + '">');
 							});
 
 					      }
@@ -63,13 +64,33 @@
 				}
 				grabImages(access_parameters);
 
+			$('#add').click(function(){
+				var postMessage = $('#message').val();
+				$('#txtPreview').html('<h2>' + postMessage + '</h2>')
+			});
+
 			});
 		</script>
 
 	</head>
 	<body>
-		<h1>PugStagram!</h1>
+		<h1>PugStagram Post!</h1>
 		<div id="target">
+			<h2>Step 1: Pick Your favorite PugStagram!</h2>
+		</div>
+		<div >
+			<h2>Step 2: Write Your Message!</h2>
+			<div id="largePic"></div>
+			<input type="text" id="message" name="message" required>
+			<input type="submit" id="add" value="Add">
+		</div>
+		<div id="sendOff">
+			<h2>Step 3: Preview and Send!</h2>
+			<div id="postCard">
+				<div id="photoPreview"></div>
+				<div id="txtPreview"></div>
+			</div>
+			<input type="submit" class="clear" id="send" value="Send!">		
 		</div>
 	</body>
 </html>
